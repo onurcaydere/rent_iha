@@ -44,7 +44,7 @@ Anasayfa
                                                 <th scope="col">Agırlık</th>
                                                 <th scope="col">Kategori</th>
                                                 <th scope="col">Fiyat</th>
-                                                <th>Güncelle&Sil</th>
+                                                <th scope="col">Kullanıcı Bilgi</th>
                                               </tr>
                                             </thead>
                                             <tbody id="myTable">
@@ -55,10 +55,10 @@ Anasayfa
                                                 <td>{{job.iha_agr}}</td>
                                                 <td>{{job.iha_kat}}</td>
                                                 <td>{{job.iha_fiyat}}</td>
-                                                <td>
-                                                    <button onclick="window.location.href='update/{{ job.id }}'" class="btn d-block w-100 d-sm-inline-block btn-light">Güncelle</button>
-                                                    <button onclick="window.location.href='delete/{{ job.id }}'" class="btn d-block w-100 d-sm-inline-block btn-red">Sil</button>
+                                                 <td>{{job.iha_kullanıcı}}</td>
 
+                                                <td>
+                                                   
 
                                                 </td>
                                               </tr>
