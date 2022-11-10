@@ -1,0 +1,116 @@
+{% extends "iha_app/base.html" %}
+{% block title %}
+
+Anasayfa
+{% endblock title %}
+
+
+
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="{{Anasayfa}}">IHA KIRALA</a>
+
+    <a class="navbar-brand my-2 my-sm-0" href="{{Anasayfa}}">
+        Hoşgeldiniz  {{user}}
+    </a>
+    <a class="navbar-brand my-2 my-sm-0" href="/">
+        Çıkış
+    </a>
+</nav>
+
+<main class="col-md-3 ms-sm-auto col-lg-10 px-md-4"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+        <strong style="vertical-align: inherit; font-size: 30px;">
+          IHA KIRALA
+        </strong>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <div class="col-lg-10 mx-auto">
+                                <form class="form-inline">
+                                    <input class="form-control" id="myInput" type="text" placeholder="Search..">
+                                    <select id="countriesDropdown" oninput="filterTable()">
+                                        <option>All</option>
+                                        {% for job in bilgi.all %}
+                                                <option>{{job.iha_model}}</option>
+
+                                        {% endfor %}
+
+                                      </select>
+                                </form>
+                                </div>
+                            </form>
+                                        <table class="table table-borderless">
+                                            <thead class="thead-dark">
+                                              <tr>
+                                                <th scope="col">Marka</th>
+                                                <th scope="col">Model</th>
+                                                <th scope="col">Agırlık</th>
+                                                <th scope="col">Kategori</th>
+                                                <th scope="col">Fiyat</th>
+                                                <th>Kirala</th>
+
+                                              </tr>
+                                            </thead>
+                                            <tbody id="myTable">
+                                                {% for job in bilgi.all %}    
+
+                                              <tr>
+
+                                                <td>{{job.iha_marka}}</td>
+                                                <td>{{job.iha_model}}</td>
+                                                <td>{{job.iha_agr}}</td>
+                                                <td>{{job.iha_kat}}</td>
+                                                <td>{{job.iha_fiyat}}</td>
+                                                
+                                                <td>
+                                                    <button onclick="window.location.href='kirala/{{ job.id }}'" class="btn d-block w-100 d-sm-inline-block btn-light">Kirala</button>
+
+                                                </td>
+                                              </tr>
+                                              {% endfor %}
+
+                                            </tbody>
+                                          </table>
+                                          <script>
+                                           
+                                            </script>
+
+
+                                </div>
+    
+                            </div>
+                        </div>
+    
+      
+                        <!-- END Pagination -->
+                    </div>
+                </div>
+    
+            </div>                </div>
+            
+          </div>
+
+
+    </div>
+
+ 
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css" integrity="sha256-3sPp8BkKUE7QyPSl6VfBByBroQbKxKG7tsusY2mhbVY=" crossorigin="anonymous" />
+
+
+                    
+  </main>
+</div>
+</div>
+
+
+
+
+
+</body> 
+
+
+
+
+{% endblock content %}
