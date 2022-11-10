@@ -39,7 +39,7 @@ Anasayfa
                     <div class="col-lg-10 mx-auto">
                                 <form class="form-inline">
                                     <input class="form-control" id="myInput" type="text" placeholder="Search..">
-                                    <select id="countriesDropdown" oninput="filterTable()">
+                                    <select id="catDropdown" oninput="filterTable()">
                                         <option>All</option>
                                         {% for job in bilgi.all %}
                                                 <option>{{job.iha_model}}</option>
